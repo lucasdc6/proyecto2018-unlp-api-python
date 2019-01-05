@@ -6,7 +6,7 @@ from db import init_db
 app = Flask(__name__, instance_relative_config=True)
 app.config.from_mapping(
     SECRET_KEY='dev',
-    DATABASE=path.join('db.sqlite'),
+    DATABASE=path.join('db/db.sqlite'),
 )
 
 @app.route("/")
