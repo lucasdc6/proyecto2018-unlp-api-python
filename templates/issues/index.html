@@ -5,4 +5,7 @@
 {% endblock %}
 {% block content %}
   <h1>Consultas</h1>
+  {% for issue in issues %}
+    <li>{{ issue.email }} - {{ issue.description }} - {{ issue.category_id }} - {{ issue.status_id }}</li>
+  {% endfor %}
 {% endblock %}
