@@ -11,7 +11,7 @@ app.config.from_mapping(
 
 @app.route("/")
 def hello():
-    return render_template('layout.html')
+    return render_template('home.html')
 
 
 @app.route("/consultas")

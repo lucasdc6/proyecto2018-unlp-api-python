@@ -7,9 +7,12 @@
     {% endblock %}
   </head>
   <body>
+    <div id="navbar">
+      {% block navbar %}
+      {% endblock %}
+    </div>
     <div id="content">
       {% block content %}
-        <h1>Home</h1>
       {% endblock %}
     </div>
     <div id="footer">
