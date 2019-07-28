@@ -8,8 +8,8 @@ bp = Blueprint('issue', __name__, url_prefix='/consultas')
 
 @bp.route("/")
 def index():
-    db = get_db()
-    issues = Issue(db).all()
+    Issue.db = get_db()
+    issues = Issue.all()
 
     return render_template('issue/index.html', issues=issues)
 
@@ -18,9 +18,10 @@ def new():
     return render_template('issue/new.html')
 
 
-@bp.route("/new", methods=['POST'])
+@bp.route("/", methods=['POST'])
 def create():
-    db = get_db()
-    Issue(db).create(request.form)
+    Issue.db = get_db()
+    Issue.create(request.form)
+
     return redirect(url_for('issue.index'))
 
